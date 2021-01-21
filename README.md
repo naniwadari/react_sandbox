@@ -20,3 +20,5 @@ react の機能をいろいろ試す
 ### react-router-dom の Redirect がうまく機能しない
 
 - 未解決・・・
+- 解決！redirect は同じ switch 内の URL に対してじゃないとうまく起動しないらしい
+- Auth と二つにわけていたのを一つにして覆ったら ちゃんと redirect した

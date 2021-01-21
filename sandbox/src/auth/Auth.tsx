@@ -11,7 +11,7 @@ export function Auth(props: any) {
     return <div>Error: {error}</div>
   }
   if (!user) {
-    return <Redirect to="/" />
+    return <Redirect to='/login' />
   }
   return <>{props.children}</>
 }

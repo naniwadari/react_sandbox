@@ -4,7 +4,6 @@ import {
   Route,
   Link,
   Switch,
-  Redirect
 } from 'react-router-dom'
 import { Top } from './pages/Top'
 import { About } from './pages/About'
@@ -15,7 +14,7 @@ import { Auth } from './auth/Auth'
 
 function App() {
   return (
-    <Router>
+      <Router>
       <ul>
         <li><Link to="/">トップ</Link></li>
         <li><Link to="/login">ログイン</Link></li>
@@ -24,19 +23,16 @@ function App() {
         <li><Link to="/articles">記事</Link></li>
         <li><Link to="/redirect">テスト</Link></li>
       </ul>
-      <Switch>
-        <Route path="/" exact component={Top}></Route>
-        <Route path="/login" exact component={Login}></Route>
-      </Switch>
-      <Auth>
         <Switch>
-          <Route path="/logout" exact component={Logout}></Route>
-          <Route path="/about" exact component={About}></Route>
-          <Route path="/articles" exact component={Articles}></Route>
-          <Route path="/redirect" exact component={() => {return <Redirect to="/" />}} />
+          <Route path="/" exact component={Top}></Route>
+          <Route path="/login" exact component={Login}></Route>
+          <Auth>
+            <Route path="/logout" exact component={Logout}></Route>
+            <Route path="/about" exact component={About}></Route>
+            <Route path="/articles" exact component={Articles}></Route>
+          </Auth>
         </Switch>
-      </Auth>
-    </Router>
+      </Router>
   )
 }
 
